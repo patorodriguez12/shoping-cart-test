@@ -8,3 +8,5 @@ commits
 - ♻️ refactor
 - 💄 style
 - ⏪ revert
+- 🔥 delete
+- 🛠 dependencie
