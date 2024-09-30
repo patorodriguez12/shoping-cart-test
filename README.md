@@ -9,4 +9,4 @@ commits
 - 💄 style
 - ⏪ revert
 - 🔥 delete
-- 🛠 dependencie
+- 🛠 dependency
