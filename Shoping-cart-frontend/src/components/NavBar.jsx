@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 function Navbar() {
   return (
-    <div>Navbar</div>
-  )
+    <nav className="text-center text-3xl font-bold text-blue-600">Navbar</nav>
+  );
 }
 
-export default Navbar
+export default Navbar;
