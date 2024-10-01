@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <nav className="h-16 bg-black flex text-white justify-between items-center p-0 px-16">
       <Link to="/">
-        <h2 className="text-xl ">ShopCart</h2>
+        <h2 className="text-2xl">ShopCart</h2>
       </Link>
       <Link to="/cart">
         <div className="flex items-center">
