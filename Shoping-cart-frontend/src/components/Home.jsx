@@ -4,22 +4,30 @@ import { useGetAllProductsQuery } from "../features/productsApi";
 function Home() {
   const { data, error, isLoading } = useGetAllProductsQuery();
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
-
   return (
     <div>
-      <h1>Products</h1>
-      <ul>
-        {data.map((product) => (
-          <li key={product.id}>
-            <h2>{product.name}</h2>
-            <p>{product.description}</p>
-            <p>Price: ${product.price}</p>
-            <img src={product.image} alt={product.name} />
-          </li>
-        ))}
-      </ul>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>An error ocurred...</p>
+      ) : (
+        <>
+          <h2>New Arrivals</h2>
+          <div>
+            {data?.map((product) => (
+              <div key={product.id}>
+                <h3>{product.name}</h3>
+                <img src={product.image} alt={product.name} />
+                <div>
+                  <span>{product.description}</span>
+                  <span>${product.price}</span>
+                </div>
+                <button>Add To Cart</button>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }
