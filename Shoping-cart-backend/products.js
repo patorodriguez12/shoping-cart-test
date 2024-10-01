@@ -10,7 +10,7 @@ const products = [
   {
     id: 2,
     name: "iPhone 15 Plus",
-    desciption:
+    description:
       "El iPhone 15 Plus viene con la Dynamic Island, cámara gran angular de 48 MP, entrada USB-C y un resistente vidrio con infusión de color en un diseño de aluminio.",
     price: 899,
     image: "https://http2.mlstatic.com/D_NQ_NP_759471-MLA71782897602_092023-O.webp"
