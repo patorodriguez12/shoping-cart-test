@@ -6,11 +6,14 @@ import App from "./App.jsx";
 import NavBar from "./components/NavBar.jsx";
 import "./index.css";
 import store from "./app/store.js";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <StrictMode>
       <BrowserRouter>
+        <ToastContainer />
         <NavBar />
         <App />
       </BrowserRouter>
