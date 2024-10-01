@@ -1,13 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { productsApi } from "../features/productsApi"; // Importa productsApi correctamente
+import { productsApi } from "../features/productsApi.js";
 
 const store = configureStore({
   reducer: {
-    // Solo incluye el reducer de productsApi
     [productsApi.reducerPath]: productsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(productsApi.middleware), // Asegúrate de concatenar el middleware de productsApi
+    getDefaultMiddleware().concat(productsApi.middleware),
+  devTools: process.env.NODE_ENV !== "production",
 });
 
 export default store;
