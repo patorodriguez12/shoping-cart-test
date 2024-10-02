@@ -27,7 +27,7 @@ function Home() {
             {data?.map((product) => (
               <div
                 key={product.id}
-                className="w-[250px] max-w-full  flex flex-col justify-between my-8 mx-auto p-4 shadow-2xl rounded-xl"
+                className="w-[250px] max-w-full  flex flex-col justify-between my-8 mx-auto p-4 rounded-xl overflow-hidden shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
               >
                 <h3 className="text-[25px] font-normal">{product.name}</h3>
                 <img
@@ -43,7 +43,7 @@ function Home() {
                 </div>
                 <button
                   onClick={() => handleAddToCart(product)}
-                  className="w-full h-[40px] rounded-xl mt-8 font-normal bg-[#4b70e2] text-white tracking-wide"
+                  className="w-full h-[40px] rounded-xl mt-8 font-normal bg-sky-500 hover:bg-sky-700 text-white tracking-wide"
                 >
                   Add To Cart
                 </button>
