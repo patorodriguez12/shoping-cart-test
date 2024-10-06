@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { removeFromCart, decreaseCart } from "../features/cartSlice";
+import { removeFromCart, decreaseCart, addToCart } from "../features/cartSlice";
 
 function Cart() {
   const dispatch = useDispatch();
@@ -14,6 +14,10 @@ function Cart() {
 
   const handleDecreaseCart = (cartItem) => {
     dispatch(decreaseCart(cartItem));
+  };
+
+  const handleIncreaseCart = (cartItem) => {
+    dispatch(addToCart(cartItem));
   };
 
   return (
@@ -85,7 +89,12 @@ function Cart() {
                     -
                   </button>
                   <div className="py-3 px-0">{cartItem.cartQuantity}</div>
-                  <button className="py-3 px-5 cursor-pointer">+</button>
+                  <button
+                    className="py-3 px-5 cursor-pointer"
+                    onClick={() => handleIncreaseCart(cartItem)}
+                  >
+                    +
+                  </button>
                 </div>
                 <div className="justify-self-end pr-2 font-bold">
                   ${cartItem.price * cartItem.cartQuantity}
