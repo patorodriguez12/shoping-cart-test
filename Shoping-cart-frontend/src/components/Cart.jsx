@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { removeFromCart } from "../features/cartSlice";
+import { removeFromCart, decreaseCart } from "../features/cartSlice";
 
 function Cart() {
   const dispatch = useDispatch();
@@ -10,6 +10,10 @@ function Cart() {
 
   const handleRemoveFromCart = (cartItem) => {
     dispatch(removeFromCart(cartItem));
+  };
+
+  const handleDecreaseCart = (cartItem) => {
+    dispatch(decreaseCart(cartItem));
   };
 
   return (
@@ -74,7 +78,12 @@ function Cart() {
                 </div>
                 <div className="">${cartItem.price}</div>
                 <div className="flex justify-center w-[130px] max-w-full place-items-start border-2 border-gray-300 rounded">
-                  <button className="py-3 px-5 cursor-pointer">-</button>
+                  <button
+                    className="py-3 px-5 cursor-pointer"
+                    onClick={() => handleDecreaseCart(cartItem)}
+                  >
+                    -
+                  </button>
                   <div className="py-3 px-0">{cartItem.cartQuantity}</div>
                   <button className="py-3 px-5 cursor-pointer">+</button>
                 </div>
