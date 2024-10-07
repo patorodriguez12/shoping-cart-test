@@ -2,7 +2,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { removeFromCart, decreaseCart, addToCart } from "../features/cartSlice";
+import {
+  removeFromCart,
+  decreaseCart,
+  addToCart,
+  clearCart,
+} from "../features/cartSlice";
 
 function Cart() {
   const dispatch = useDispatch();
@@ -18,6 +23,10 @@ function Cart() {
 
   const handleIncreaseCart = (cartItem) => {
     dispatch(addToCart(cartItem));
+  };
+
+  const handleClearCart = () => {
+    dispatch(clearCart());
   };
 
   return (
@@ -103,7 +112,10 @@ function Cart() {
             ))}
           </div>
           <div className="flex justify-between place-items-start border-t-2 border-gray-300 pt-16">
-            <button className="w-[130px] max-w-full h-[40px] rounded font-normal border-2 border-gray-400 text-gray-400 hover:border-red-700 hover:text-red-700 cursor-pointer">
+            <button
+              className="w-[130px] max-w-full h-[40px] rounded font-normal border-2 border-gray-400 text-gray-400 hover:border-red-700 hover:text-red-700 cursor-pointer"
+              onClick={() => handleClearCart()}
+            >
               Clear Cart
             </button>
             <div className="w-[270px] max-w-full">
