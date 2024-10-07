@@ -8,6 +8,9 @@ import "./index.css";
 import store from "./app/store.js";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { getTotals } from "./features/cartSlice.js";
+
+store.dispatch(getTotals());
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
