@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const register = require("./routes/register");
 require("dotenv").config();
 
 const products = require("./products");
@@ -11,6 +12,8 @@ const uri = process.env.DB_URI;
 
 app.use(express.json());
 app.use(cors());
+
+app.use("/api/register", register);
 
 app.get("/", (req, res) => {
   res.send("Shoping Cart API...");
